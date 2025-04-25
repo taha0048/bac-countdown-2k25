@@ -35,7 +35,7 @@
       justify-content: center;
       align-items: center;
       gap: 15px;
-      font-size: 3rem;
+      font-size: 5rem;
       font-weight: bold;
     }
     .countdown div {
@@ -44,7 +44,6 @@
       align-items: center;
       padding: 15px;
       border-radius: 10px;
-      /* background removed for each segment */
     }
     .countdown div span:first-child {
       color: #94B4C1;
@@ -68,7 +67,7 @@
         font-size: 3rem;
       }
       .countdown {
-        font-size: 4rem;
+        font-size: 6rem;
         gap: 20px;
       }
       .label {
@@ -94,8 +93,8 @@
   <script>
     const countdownDate = new Date("June 2, 2025 00:00:00").getTime();
 
-    const updateCountdown = () => {
-      const now = new Date().getTime();
+    function updateCountdown() {
+      const now = Date.now();
       const distance = countdownDate - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -107,7 +106,7 @@
       document.getElementById("hours").textContent = String(hours).padStart(2, '0');
       document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
       document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
-    };
+    }
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
